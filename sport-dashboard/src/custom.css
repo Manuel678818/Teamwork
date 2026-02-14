@@ -1,0 +1,219 @@
+/* Sporty Green Theme Overrides */
+
+:root {
+    --primary-color: #00b894;
+    /* Vivid Green */
+    --secondary-color: #55efc4;
+    /* Soft Green */
+    --accent-color: #fab1a0;
+    /* Soft Orange/Red for contrast */
+    --dark-bg: #2d3436;
+    --light-bg: #f5f6fa;
+    --sidebar-bg: #ffffff;
+    --text-color: #2d3436;
+    --sidebar-width: 260px;
+}
+
+[data-theme="dark"] {
+    --light-bg: #1e1e1e;
+    --sidebar-bg: #2d2d2d;
+    --text-color: #f5f6fa;
+}
+
+[data-theme="dark"] .card {
+    background-color: #2d2d2d;
+    color: #f5f6fa;
+}
+
+[data-theme="dark"] .nxl-navigation {
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid #444;
+}
+
+[data-theme="dark"] .nxl-header {
+    background-color: var(--sidebar-bg);
+    border-bottom: 1px solid #444;
+}
+
+[data-theme="dark"] .text-dark {
+    color: #f5f6fa !important;
+}
+
+[data-theme="dark"] .bg-light {
+    background-color: #3d3d3d !important;
+}
+
+[data-theme="dark"] .nxl-item .nxl-link {
+    color: #a4b0be;
+}
+
+[data-theme="dark"] .nxl-item .nxl-link:hover,
+[data-theme="dark"] .nxl-item.active .nxl-link {
+    background-color: rgba(0, 184, 148, 0.2);
+    color: var(--primary-color);
+}
+
+body {
+    background-color: var(--light-bg);
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+}
+
+/* Sidebar Styling */
+.nxl-navigation {
+    background-color: var(--sidebar-bg);
+    width: var(--sidebar-width);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    padding-top: 1rem;
+}
+
+.nxl-navigation .m-header {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    margin-bottom: 20px;
+}
+
+.nxl-item .nxl-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 24px;
+    color: #636e72;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-right: 3px solid transparent;
+}
+
+.nxl-item .nxl-link:hover,
+.nxl-item.active .nxl-link {
+    color: var(--primary-color);
+    background-color: rgba(0, 184, 148, 0.05);
+    border-right-color: var(--primary-color);
+}
+
+.nxl-micon {
+    font-size: 18px;
+    margin-right: 12px;
+}
+
+.nxl-caption {
+    padding: 12px 24px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #b2bec3;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* Header Styling */
+.nxl-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: var(--sidebar-width);
+    height: 70px;
+    background: #fff;
+    z-index: 1000;
+    display: flex;
+    /* Ensure header itself is useful */
+    align-items: center;
+    /* Vertically center content */
+    padding: 0 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+/* Main Content */
+.nxl-container {
+    margin-left: var(--sidebar-width);
+    padding-top: 70px;
+    min-height: 100vh;
+}
+
+/* Main Content Background */
+.nxl-content {
+    padding: 30px;
+    background-image: url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+    /* Sporty background */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 1;
+}
+
+/* Overlay to ensure text readability */
+.nxl-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(245, 246, 250, 0.92);
+    /* Light overlay */
+    z-index: -1;
+}
+
+/* Card Styling for Dashboards */
+.card.stretch {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.card.stretch:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+/* Update list to not look broken */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Hero Section */
+.hero-card {
+    background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+    color: white;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    padding: 40px;
+}
+
+.hero-content h2 {
+    font-weight: 800;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
